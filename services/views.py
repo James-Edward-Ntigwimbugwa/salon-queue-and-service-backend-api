@@ -14,6 +14,11 @@ from .serializers import (
     FeedbackCreateSerializer
 )
 
+# Custom Permission Classes
+class IsAdminOrStaff(permissions.BasePermission):
+    def has_permission(self, request, view):
+        return request.user.role in ['admin', 'staff']
+
 class ServiceCategoryListView(generics.ListCreateAPIView):
     queryset = ServiceCategory.objects.filter(is_active=True)
     serializer_class = ServiceCategorySerializer
@@ -86,7 +91,3 @@ class ServiceStaffListView(generics.ListCreateAPIView):
     serializer_class = ServiceStaffSerializer
     permission_classes = [permissions.IsAuthenticated, IsAdminOrStaff]
 
-# Custom Permission Classes
-class IsAdminOrStaff(permissions.BasePermission):
-    def has_permission(self, request, view):
-        return request.user.role in ['admin', 'staff']
