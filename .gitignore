@@ -1,0 +1,36 @@
+# environment files
+.vscode/
+.idea/
+venv/
+.env
+.env.local
+.env.development.local
+.env.test.local
+
+
+# pycache files
+__pycache__/
+*.py[cod]
+
+# migration files and all migrations folders
+migrations/
+*.sqlite3
+
+# static files
+staticfiles/
+static/ 
+
+# database files
+db.sqlite3
+
+
+# log files
+*.log
+
+# cache files
+.cache/
+
+
+
+# media files
+media/
