@@ -37,11 +37,11 @@ urlpatterns = [
     # App URLs
     path('api/accounts/', include('accounts.urls')),
     path('api/services/', include('services.urls')),
-    # path('api/queue/', include('queue.urls')),
-    # path('api/inventory/', include('inventory.urls')),
-    # path('api/payments/', include('payments.urls')),
+    path('api/order_queue/', include('order_queue.urls')),
+    path('api/inventory/', include('inventory.urls')),
+    path('api/payments/', include('payments.urls')),
     path('api/notifications/', include('notifications.urls')),
-    # path('api/reports/', include('reports.urls')),
+    path('api/reports/', include('reports.urls')),
 ]
 
 # Serve media files in development
